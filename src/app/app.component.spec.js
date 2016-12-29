@@ -1,4 +1,4 @@
-import { inject } from '@angular/core/testing';
+import { inject, describe, beforeEach, it, expect } from '@angular/core/testing';
 import { TestBed } from '@angular/core/testing';
 
 // Load the implementations that should be tested
@@ -9,9 +9,10 @@ describe('App', () => {
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
       AppComponent,
-    ]}));
+    ]
+  }));
 
-  it('should have a name', inject([ AppComponent ], (app) => {
+  it('should have a name', inject([AppComponent], (app) => {
     expect(!!app.name).toEqual(true);
   }));
 });

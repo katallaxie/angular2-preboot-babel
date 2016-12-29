@@ -19,7 +19,7 @@
 
 ## Quick Start
 
-> We have a [Yeoman](http://yeoman.io/generators/) in place that has your back.
+> We have a [Yeoman](http://yeoman.io/generators/) in place that has your back (tba)
 > We support Node.js `>= 6.9.1` and NPM `>= 3.x` 
 > We recommend and support [Visual Studio Code](https://code.visualstudio.com/)
 > We recommend to use [NVM](https://github.com/creationix/nvm) to manage your Node.js version and dependencies

@@ -1,6 +1,5 @@
-import { inject } from '@angular/core/testing';
+import { inject, describe, beforeEach, it, expect } from '@angular/core/testing';
 import { TestBed } from '@angular/core/testing';
-import { ConnectionBackend } from '@angular/http';
 import { BaseRequestOptions } from '@angular/http';
 import { Http } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
