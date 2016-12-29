@@ -6,6 +6,7 @@
   "extends": "eslint:recommended",
 
   "env": {
+    "jest": true,
     "browser": true,     // browser global variables.
     "node": true,        // Node.js global variables and Node.js-specific rules.
     "amd": false,         // defines require() and define() as global variables as per the amd spec.
