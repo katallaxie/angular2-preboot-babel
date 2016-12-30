@@ -147,7 +147,14 @@ module.exports = config => {
 
     // Webpack please don't spam the console when running in karma!
     webpackMiddleware: {
-      stats: 'errors-only'
+      // webpack-dev-middleware configuration
+      // i.e.
+      noInfo: true,
+      // and use stats to turn off verbose output
+      stats: {
+        // options i.e. 
+        chunks: false
+      }
     },
 
     /*
