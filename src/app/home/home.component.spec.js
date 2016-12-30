@@ -1,39 +1,49 @@
-import { inject } from '@angular/core/testing';
-import { TestBed } from '@angular/core/testing';
-import { BaseRequestOptions } from '@angular/http';
-import { Http } from '@angular/http';
-import { MockBackend } from '@angular/http/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { 
+  async,
+  getTestBed,
+  TestBed
+} from '@angular/core/testing';
 
 // Load the implementations that should be tested
 import { HomeComponent } from './home.component';
 
-describe('Home', () => {
-  // provide our implementations or mocks to the dependency injector
-  beforeEach(() => TestBed.configureTestingModule({
-    providers: [
-      BaseRequestOptions,
-      MockBackend,
-      {
-        provide: Http,
-        useFactory: (backend, defaultOptions) => {
-          return new Http(backend, defaultOptions);
-        },
-        deps: [MockBackend, BaseRequestOptions],
-      },
-      HomeComponent,
-    ],
+describe(`HomeComponent`, () => {
+  let comp, fixture;
+
+  // // async beforeEach
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [HomeComponent],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
   }));
 
-  it('should have a title', inject([ HomeComponent ], (home) => {
-    expect(!!home.title).toEqual(true);
-  }));
+  afterEach(() => {
+    getTestBed().resetTestingModule();
+  });
 
-  // it('should log ngOnInit', inject([ HomeComponent ], (home) => {
-  //   spyOn(console, 'log');
-  //   expect(console.log).not.toHaveBeenCalled();
+  it(`should be readly constructed`, () => {
+    fixture = TestBed.createComponent(HomeComponent);
+    comp = fixture.componentInstance;
 
-  //   home.ngOnInit();
-  //   expect(console.log).toHaveBeenCalled();
-  // }));
+    fixture.detectChanges();
+
+    expect(comp).toBeDefined();
+
+    console.log(comp);
+  });
+
+  it(`should have a title`, () => {
+    expect(!!comp.title).toBe(true);
+  });
+
+  it('should log ngOnInit', () => {
+    spyOn(console, 'log');
+    expect(console.log).not.toHaveBeenCalled();
+
+    comp.ngOnInit();
+    expect(console.log).toHaveBeenCalled();
+  });
 
 });

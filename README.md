@@ -12,7 +12,7 @@
 
 * [Webpack 2](http://webpack.github.io/)
 * [Babel](https://babeljs.io)
-* [Jest](https://facebook.github.io/jest/)
+* [Karma](https://karma-runner.github.io)
 * [Protractor](https://angular.github.io/protractor/)
 * [E2E](https://angular.github.io/protractor/#/faq#what-s-the-difference-between-karma-and-protractor-when-do-i-use-which-)
 * [Docker](https://docker.io)

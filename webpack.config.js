@@ -12,7 +12,6 @@
 
 // imports
 const {
-  ContextReplacementPlugin,
   DllPlugin,
   DllReferencePlugin,
   DefinePlugin,
@@ -109,8 +108,6 @@ const commonConfig = () => {
               babelrc: true
             }
           },
-          'angular2-template-loader',
-          'angular-router-loader',
         ],
         exclude: [
           /(node_modules|bower_components)/,
@@ -145,10 +142,6 @@ const commonConfig = () => {
   };
 
   config.plugins = [
-    // new ContextReplacementPlugin(
-    //   /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-    //   root(`src`),
-    // ),
     new DefinePlugin({
       'ENV': JSON.stringify(ENV),
       'process.env': JSON.stringify(process.env),
